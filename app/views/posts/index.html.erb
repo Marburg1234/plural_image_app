@@ -1,0 +1,12 @@
+<h1>Index</h1>
+<%= link_to "新規投稿へ", new_post_path %>
+<br />
+
+<% if @posts.present? %>
+  <% @posts.each do |post| %>
+    <% if post.images.attached? %>
+      <%= image_tag post.images.first.variant(resize: '500x500') %>
+    <% end %>
+    <%= link_to "削除", post_path(post.id), method: :delete %>
+  <% end %>
+<% end %>
