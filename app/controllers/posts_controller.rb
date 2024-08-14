@@ -6,11 +6,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-      if params[:post][:images].present?
-        params[:post][:images].each do |image|
-        @post.images.attach(image)
-       end
-      end
       if @post.save
         redirect_to posts_path
       else
@@ -20,6 +15,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   def destroy

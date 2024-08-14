@@ -1,7 +1,8 @@
 <h1>New</h1>
 <%= link_to "一覧画面へ", posts_path %>
 <br />
-<%= form_with model: @post do |f| %>
+<div class="field">
+<%= form_with model: @post, local: true do |f| %>
   <%= f.file_field :images, accept: "image/*", multiple: true %>
   <br />
   <%= f.submit "保存" %>

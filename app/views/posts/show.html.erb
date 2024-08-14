@@ -1,0 +1,7 @@
+<h1>Show ページ</h1>
+<%= link_to "一覧画面へ", posts_path %>
+<div>
+  <% @post.images.uniq.each do |image| %>
+    <%= image_tag image, size: '500x500' %>
+  <% end %>
+</div>

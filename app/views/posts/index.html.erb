@@ -5,8 +5,9 @@
 <% if @posts.present? %>
   <% @posts.each do |post| %>
     <% if post.images.attached? %>
-      <%= image_tag post.images.first.variant(resize: '500x500') %>
+      <%= image_tag post.images.first.variant(resize: '150x150') %>
     <% end %>
+    <%= link_to "詳細", post_path(post.id), method: :get %>
     <%= link_to "削除", post_path(post.id), method: :delete %>
   <% end %>
 <% end %>
