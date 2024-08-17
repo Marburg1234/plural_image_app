@@ -1,7 +1,26 @@
 <h1>Show ページ</h1>
-<%= link_to "一覧画面へ", posts_path %>
-<div>
-  <% @post.images.uniq.each do |image| %>
-    <%= image_tag image, size: '500x500' %>
-  <% end %>
+<%= link_to "一覧画面へ", posts_path, class: 'btn btn-success' %>
+
+
+<div class="test">GREAT</div>
+
+<!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <% @post.images.each do |image| %>
+    <div class="swiper-slide"><%= image_tag image %></div>
+    <% end %>
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+  <%= javascript_include_tag 'script' %>
 </div>

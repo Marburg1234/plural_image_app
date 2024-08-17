@@ -1,5 +1,5 @@
 <h1>Index</h1>
-<%= link_to "新規投稿へ", new_post_path %>
+<%= link_to "新規投稿へ", new_post_path, class: 'btn btn-info' %>
 <br />
 
 <% if @posts.present? %>
@@ -8,6 +8,6 @@
       <%= image_tag post.images.first.variant(resize: '150x150') %>
     <% end %>
     <%= link_to "詳細", post_path(post.id), method: :get %>
-    <%= link_to "削除", post_path(post.id), method: :delete %>
+    <%= link_to "削除", post_path(post.id), method: :delete, class: 'btn btn-danger' %>
   <% end %>
 <% end %>
